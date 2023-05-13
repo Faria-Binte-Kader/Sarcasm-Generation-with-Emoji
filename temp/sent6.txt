@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Take in a sentence (esp. good sentence like quote, proverb...)</title>
+<meta name="description" content="232+58 sentence examples: 1. If a man empties his purse into his head, no one can take it from him. 2. We will take a chance to have the party outdoor. 3. The government brought in a controversial law under which it could take any land it wanted. 4. "/>
+<link href="/common/dedecms.css" rel="stylesheet" media="screen" type="text/css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<style>
+#content div{
+	line-height:23px;font-size:14px;margin-bottom:15px;
+}
+#ad_marginbottom_0 div{
+	margin-bottom:0px;
+}
+.hidden1{display:none;}
+
+.dictvoice:active{background-color:deepskyblue}
+</style>
+<script>
+function q1(word){
+	formQ.word.value=word;
+	formQ.submit();
+}
+function upWord(word,action,word){
+	var votedNumber=getCookie("votedNumber"+word);
+	if(votedNumber!=null){
+		alert("Have done up or down!");
+		return;
+	}
+	var xmlhttp;
+	if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+		 xmlhttp=new XMLHttpRequest();
+	}else{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function(){
+	if (xmlhttp.readyState==4 && xmlhttp.status==200){
+		////返回后做事情
+		var responseText=xmlhttp.responseText;  
+		//有异常.
+		if(responseText!="" && responseText!=null){
+		   alert(responseText);
+		}else{
+			var id_temp="wordUpTimes";
+			if(action=="down"){
+				id_temp="wordDownTimes";
+			}
+			var temp=document.getElementById(id_temp).innerText;
+			var displayTimes=parseInt(temp);
+			displayTimes=displayTimes+1;
+			document.getElementById(id_temp).innerText=displayTimes;
+			//cookie别设置太长,防止用户电脑中cookie太多哦
+			setCookie("votedNumber"+word,"1",12);
+		}
+	  }
+	};
+	xmlhttp.open("POST","upDownWordDo.php",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("action="+action+"&word="+encodeURIComponent(word)+"&rnd="+ Math.random());
+}
+</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-7200850114163593",
+          enable_page_level_ads: true
+     });
+</script>
+</head>
+<body>
+<form method="post" style="display:none;" target="_blank" name="formQ" action="/wordQueryDo.php">
+<input type="hidden" name="word"/>
+<input type="hidden" name="directGo" value="1"/>
+</form>
+<div class="pageDiv" style="border: 0px solid blue;">
+<script>
+function trim(str){
+　return str.replace(/(^\s*)|(\s*$)/g,"");
+}
+var strDefault="Please input any word...";
+function queryCheck(){
+	if(formQuery.vagueSearch.checked){
+		///formQuery.q.value=encodeURI(formQuery.word.value+" site:sentencedict.com");
+		formQuery.q.value=formQuery.word.value+" site:sentencedict.com";
+		var temp=formQuery.action;
+		formQuery.action="https://www.google.com/search";
+		formQuery.method="get";
+		formQuery.target="_blank";
+		//为了wo参数不提交
+		formQuery.word.disabled=true;
+		formQuery.submit();
+		formQuery.action=temp;
+		formQuery.method="post";
+		formQuery.target="_self";
+		formQuery.word.disabled=false;
+	}else{
+		formQuery.word.value=trim(formQuery.word.value);
+		var word=formQuery.word.value;
+		if(word==""||word==strDefault){
+			alert("Please input any word!");return;
+		}
+		formQuery.submit();
+	}
+	var temp="1";
+	if(!formQuery.directGo.checked){
+		temp="0";
+	}
+	setCookie("directGo",temp,12);
+	var temp="1";
+	if(!formQuery.vagueSearch.checked){
+		temp="0";
+	}
+	setCookie("vagueSearch",temp,12);
+}
+function getCookie(name)
+{
+	var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+	if(arr=document.cookie.match(reg))
+		return (arr[2]);
+	else
+		return null;
+}
+function setCookie(cookiename,cookievalue,hours){
+	var date=new Date();
+	date.setTime(date.getTime()+Number(hours)*3600*1000);
+	document.cookie=cookiename+"="+cookievalue+";path=/;expires="+date.toGMTString();
+}
+</script>
+<div class="header">
+<table width="100%" style="margin-bottom:4px;font-size:14px;" height=65 cellspacing=0 border=0 >
+<tr>
+    <td width=100 valign="bottom" style="padding:0px;">
+      <a href="/">
+      <img src="/images/logo.jpg" style="vertical-align:bottom;margin-bottom:1px;border:0px solid #dddddd" alt="Sentencedict.com" height=50 width=150>
+      </a>
+    </td>
+    <td valign="bottom">
+<form method="post" style="margin:2px;margin-left:10px;" name="formQuery" action="/wordQueryDo.php">
+<input type='text' style='display:none;'/>
+<input type="hidden" name="q" value="">
+<input type="text" name="word" maxLength=100 style="float:left;margin-bottom:3px;width:360px;height:28px;line-height:26px;padding-left:6px;font-size:16px;border:1px solid #3D7A01;border-top:1px solid #67CD01;border-left:1px solid #67CD01;color:gray;" 
+size=20 value="Please input any word..." onfocus="if(this.value==strDefault){this.value='';this.style.color='black';}" onblur="if(this.value==''){this.value=strDefault;this.style.color='gray';}" onkeydown="if(event.keyCode==13){queryCheck();}"/>
+<input type="button" style="float:left;width:70px;height:30px;margin-left:4px;cursor:pointer;font-size:14px;" onclick="queryCheck()" value="Search"/><div style="margin-top:10px;float:left;">&nbsp;<input type="checkbox" name="directGo" style="margin-right:2px;margin-bottom:2px;margin-left:2px;" value="1" checked/>Directly to word page&nbsp;<span title="use vague search provided by google" style=""><input type="checkbox" name="vagueSearch" style="margin-right:2px;margin-bottom:2px;" value="1" onclick="if(this.checked){formQuery.directGo.disabled=true;}else{formQuery.directGo.disabled=false;}"/>Vague search(google)</span>
+</div>
+</form>
+</td>
+</tr>
+</table>
+<script>
+var temp=getCookie("directGo");
+//此情况修改directGo的checked状态
+if(temp=="0"){
+  formQuery.directGo.checked=false;
+}
+var temp=getCookie("vagueSearch");
+//此情况修改vagueSearch的checked状态
+if(temp=="1"){
+  formQuery.vagueSearch.checked=true;
+}
+</script>
+<div class="module blue mT10 wrapper w963">
+<div id="navMenu" style="background-color:#199507;border:0px solid red;background-image:url('/images/green_skin.png');background-position:0 -72px;background-repeat:repeat-x;">
+<ul>
+	<li><a href="/"><span>Home</span></a></li>
+	<li><a href="/top1000/"><span>Top1000 word</span></a></li>
+	<li><a href="/top5000/"><span>Top5000 word</span></a></li>
+	<li><a href="/phrase/"><span>Phrases</span></a></li>
+	<!--<li><a href="/conjunction/"><span>Conjunction</span></a></li>-->
+	<li><a href="/game/"><span>Game</span></a></li>
+	<li><a href="/getSImage.php"><span>Sentence into pic</span></a></li>
+	<li><a href="/feedback.php"><span>Feedback</span></a></li>
+	<li><a href="/donate.php"><span>Donate</span></a></li>
+</ul>
+</div><!-- //navMenu -->
+
+</div><!-- //module blue... -->
+<div>
+</div>
+</div><div class="place" style="margin-top:8px;margin-bottom:0px;height:26px;line-height:26px;"><a href="/">Home</a> &gt; <a href="take.html">Take in a sentence</a>
+</div>
+<div id="div_main_left" style="width:81%;float:left;margin-top:8px;border:0px solid blue;">
+
+<div class="viewbox" style="width:auto;padding-bottom:0px">
+<div class="title" style="padding-top:0px;line-height:56px;height:auto;overflow:visible;">
+<h2 style="display:inline;">Take in a sentence</h2><!--(esp. good sentence)--><span>&nbsp;&nbsp;<a href="javascript:;" onclick="upWord('take','up','take')">up(<span id="wordUpTimes">5</span>)</a>&nbsp;&nbsp;<a href="javascript:;" onclick="upWord('take','down','take')">down(<span id="wordDownTimes">0</span>)</a></span>
+</div>
+<div class="info">Sentence count:232+58<small>Posted:</small>2016-07-15<small>Updated:</small>2020-07-24</div>
+
+<script>
+function onlyStudent(this1){
+	///alert(this1.checked);
+	if(this1.checked){
+		document.getElementById('all').style.display='none';
+		document.getElementById('student').style.display='block';
+		setCookie("onlyStudent","1",12);
+	}else{
+		document.getElementById('student').style.display='none';
+		document.getElementById('all').style.display='block';
+		setCookie("onlyStudent","0",12);
+	}
+}
+/*
+var temp=getCookie("onlyStudent");
+//此情况修改vagueSearch的checked状态
+if(temp=="1"){
+  document.getElementById('onlyStudent').checked=true;
+}
+*/
+</script>
+
+<div  id="content" style="border-bottom:1px solid #aaaaaa;">
+
+<!--最大高度为105px,能显示5行多的样子-->
+<div style="line-height:20px;float:none;margin-top:5px;margin-bottom:5px;margin-right:5px;padding:4px;background-color:#cccccc;border:1px solid #DCDDDD;max-height:105px;font-size:14px;overflow:auto;">
+	<span style='float:left;display:block;'>Synonym:&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("assume");'>assume</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("bring");'>bring</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("capture");'>capture</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("carry");'>carry</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("choose");'>choose</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("convey");'>convey</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("gain");'>gain</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("gather");'>gather</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("get");'>get</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("guess");'>guess</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("hire");'>hire</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("infer");'>infer</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("involve");'>involve</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("lease");'>lease</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("need");'>need</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("obtain");'>obtain</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("pick out");'>pick out</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("receive");'>receive</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("require");'>require</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("select");'>select</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("stand");'>stand</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("suppose");'>suppose</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("swallow");'>swallow</a>.&nbsp;</span><span style='float:left;display:block;'>Antonym:&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("bring");'>bring</a>,&nbsp;</span><span style='float:left;display:block;'><a href='javascript:;' onclick='q1("give");'>give</a>.&nbsp;</span><span style='float:left;display:block;'>Similar words:&nbsp;</span><span style='float:left;display:block;'><a href='stake.html' target='_blank'>stake</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take for.html' target='_blank'>take for</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take off.html' target='_blank'>take off</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take on.html' target='_blank'>take on</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take out.html' target='_blank'>take out</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take to.html' target='_blank'>take to</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take up.html' target='_blank'>take up</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take away.html' target='_blank'>take away</a>.&nbsp;</span><span style='float:left;display:block;'>Meaning:&nbsp;[teɪk]<audio id="pushIt"><source src="https://dict.youdao.com/dictvoice?type=1&audio=take" type="audio/mpeg"></audio><a href="javascript:;" class="dictvoice" style="text-decoration:none;display:inline-block" onclick="document.getElementById('pushIt').play();">&nbsp;<img width=15 height=20 src="audio.jpg" style="vertical-align:middle" />&nbsp;</a>n. 1. the income or profit arising from such transactions as the sale of land or other property 2. the act of photographing a scene or part of a scene without interruption. v. 1. carry out 2. require (time or space) 3. take somebody somewhere 4. get into one's hands, take physically 5. take on a certain form, attribute, or aspect 6. interpret something in a certain way; convey a particular meaning or impression 7. take something or somebody with oneself somewhere 8. take into one's possession 9. require as useful, just, or proper 10. pick out, select, or choose from a number of alternatives 11. travel or go by means of a certain kind of transportation, or a certain route 12. receive willingly something given or offered 13. assume, as of positions or roles 14. take into consideration for exemplifying purposes 15. experience or feel or submit to 16. make a film or photograph of something 17. remove something concrete, as by lifting, pushing, or taking off, or remove something abstract 18. serve oneself to, or consume regularly 19. accept or undergo, often unwillingly 20. make use of or accept for some purpose 21. take by force 22. occupy or take on 23. admit into a group or community 24. ascertain or determine by measuring, computing or take a reading from a dial 25. be a student of a certain subject 26. take as an undesirable consequence of some event or state of affairs 27. head into a specified direction 28. aim or direct at; as of blows, weapons, or objects such as photographic equipment 29. be seized or affected in a specified way 30. have with oneself; have on one's person 31. engage for service under a term of contract 32. receive or obtain by regular payment 33. buy, select 34. to get into a position of having, e.g., safety, comfort 35. have sex with; archaic use 36. lay claim to; as of an idea 37. be designed to hold or take 38. be capable of holding or containing 39. develop a habit 40. proceed along in a vehicle 41. obtain by winning 42. be stricken by an illness, fall victim to an illness.&nbsp;</span></div>
+<div id="imageId" style="margin:5px;margin-top:8px;float:right;">
+	<img src="/wordimage/113.jpg" style="width:300px;height:210px;" />
+	<div style="text-align:center;margin-top:4px;font-size:12px;line-height:normal;margin-bottom:0px;width:280px;">Random good picture&nbsp;<input type="checkbox" name="notShowImg" value="1" onclick="notShow();" />Not show</div>
+</div>
+<script>
+function notShow(){
+	setCookie("notShowImg","1",12);
+	//下面这行感觉不太符合软件规范,但也没办法哎.
+	document.getElementById("imageId").style.display="none";
+	///var imageTemp=document.getElementById("imageId2");if(imageTemp){imageTemp.style.display="none";}
+}
+var temp_image=getCookie("notShowImg");
+if(temp_image=="1"){
+	document.getElementById("imageId").style.display="none";
+	///var imageTemp=document.getElementById("imageId2");if(imageTemp){imageTemp.style.display="none";}
+}
+</script>
+
+<!--如果仅显示学生,并且该页有学生句子-->
+<div id="all">
+<div>151. If a man empties his purse into his head, no one can <em>take</em> it from him.</div><div>152. We will <em>take</em> a chance to have the party outdoor.</div><div>153. The government brought in a controversial law under which it could <em>take</em> any land it wanted.</div><div>154. On screen Garbo had this great charisma so that you couldn't <em>take</em> your eyes off her.</div><div>155. You'll need to calculate how much time the assignment will <em>take</em>.</div><div>156. We hired a guide to <em>take</em> us up into the mountains.</div><div>157. A messenger was dispatched to <em>take</em> the news to the soldiers at the front.</div><div id="ad_marginbottom_0" style="margin-top:-10px;margin-bottom:5px;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- 728_90_20170421 --><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7200850114163593" data-ad-slot="2392632666"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div><div>158. He sent three scouts ahead to <em>take</em> a look at the bridge.</div><div>159. She doesn't usually <em>take</em> part in any of the class activities.</div><div>160. You must <em>take</em> all reasonable steps to ensure that the information that you provide is correct.</div><div>161. Student grants these days are paltry, and many students have to <em>take</em> out loans.</div><div>162. It is better to lead from behind and to put others in front, especially when you celebrate victory when nice things occur. You <em>take</em> the front line when there is danger. Then people will appreciate your leadership.</div><div>163. The UN had been co-operating with the State Department on a plan to find countries willing to <em>take</em> the refugees.</div><div>164. Everything is a blur when I <em>take</em> my glasses off.</div><div>165. The decisions we <em>take</em> now may influence the course of events in the future.</div><div>166. We underestimated the time it would <em>take</em> to get there.</div><div>167. <em>Take</em> my advice – string along with me, I know this business inside out.</div><div>168. We hadn't booked a hotel so we had to <em>take</em> pot luck.</div><div>169. They induced her to <em>take</em> the job by promising editorial freedom.</div><div>170. Bring your baby to the clinic and we'll <em>take</em> a look at her.</div><div>171. We would like to <em>take</em> this opportunity to convey our heartfelt condolences to the families of the victims.</div><div>171. Sentencedict.com try its best to gather and build good sentences.</div><div>172. Could you bundle up these clothes? I'll <em>take</em> them to the post.</div><div>173. Do not <em>take</em> it for granted that the board of the directors will approve of the plan.</div><div>174. People who <em>take</em> part in sports must be in condition.</div><div>175. Affectionate birthday greetings.Birthday means a new beginning and a new chance to <em>take</em> hold on life.</div><div>176. Six theatre companies have been selected to <em>take</em> part in this year's festival.</div><div>177. From now on, I will expect nothing, and just <em>take</em> what I get.</div><div>178. The government must <em>take</em> action now to stop the rise in violent crime.</div><div>179. <em>Take</em> advantage of weekends to pretend you're happy for a couple days.</div><div style="margin-bottom:3px;">180. The government has threatened to <em>take</em> military action if the rebels do not withdraw from the area.</div></div><!--all结束-->
+<!--如果不是仅显示学生,或该页没有学生句子-->
+<div id="student" style="display:none;">
+</div><!--student结束-->
+
+<div id="ad_marginbottom_0" style="padding-top:0px;margin-bottom:6px;line-height:normal;margin-top:-8px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728_90_20170421 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-7200850114163593"
+     data-ad-slot="2392632666"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div style="margin-bottom:3px;font-size:13px;line-height:21px;"><span style="font-weight:bold;float:left;display:block">More similar words:&nbsp;</span><span style='float:left;display:block;'><a href='stake.html' target='_blank'>stake</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take for.html' target='_blank'>take for</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take off.html' target='_blank'>take off</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take on.html' target='_blank'>take on</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take out.html' target='_blank'>take out</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take to.html' target='_blank'>take to</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take up.html' target='_blank'>take up</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take away.html' target='_blank'>take away</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take care.html' target='_blank'>take care</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take down.html' target='_blank'>take down</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take over.html' target='_blank'>take over</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take time.html' target='_blank'>take time</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take after.html' target='_blank'>take after</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take place.html' target='_blank'>take place</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take apart.html' target='_blank'>take apart</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take the road.html' target='_blank'>take the road</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take turns.html' target='_blank'>take turns</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take note of.html' target='_blank'>take note of</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take care of.html' target='_blank'>take care of</a>,&nbsp;</span><span style='float:left;display:block;'><a href='undertake.html' target='_blank'>undertake</a>,&nbsp;</span><span style='float:left;display:block;'><a href='by mistake.html' target='_blank'>by mistake</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take action.html' target='_blank'>take action</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take it easy.html' target='_blank'>take it easy</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take the lead.html' target='_blank'>take the lead</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take charge.html' target='_blank'>take charge</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take part in.html' target='_blank'>take part in</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take effect.html' target='_blank'>take effect</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take a chance.html' target='_blank'>take a chance</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take pride in.html' target='_blank'>take pride in</a>,&nbsp;</span><span style='float:left;display:block;'><a href='take notice of.html' target='_blank'>take notice of</a>.&nbsp;</span><div style='clear:both;height:1px;margin-top:-1px;overflow:hidden;margin-bottom:0px;'></div></div>
+</div><!-- content -->
+</div><!-- viewbox -->
+<script>
+	function goPage(pagePre){
+		var goPageNo=parseInt(document.getElementById("goPageNo").value,10);
+		var pageCountNo=parseInt(document.getElementById("pageCountNo").value,10);
+		///alert(goPageNo);
+		///alert(pageCountNo);
+		//这样确实ok啊,把输入为空等情况都剔除了.白名单制度.
+		if((goPageNo<=pageCountNo) && (goPageNo>=1)){
+		}else{
+			alert("Please input the correct page number!");
+			return;
+		}
+		var href1;
+		if(goPageNo==1){
+			href1=pagePre+".html";
+		}else{
+			href1=pagePre+"_"+goPageNo+".html";
+		}
+		window.location.href=href1;
+	}
+</script>
+<div style="text-align:center;margin-top:10px;">
+	  Total&nbsp;232, 30&nbsp;Per page&nbsp;
+    6/8&nbsp;
+           <a href="/take.html"><span style="margin-right:2px;">«</span>first</a>&nbsp;
+               <a href="/take_5.html"><span style="margin-right:2px;">‹</span>pre</a>&nbsp;
+           <a href="/take_7.html">next<span style="margin-left:2px;">›</span></a>&nbsp;
+           <a href="/take_8.html">last<span style="margin-left:2px;">»</span></a>&nbsp;
+          <input type="hidden" id="pageCountNo" value="8" />
+      goto<input style="margin:auto 2px;" type="text" size=3 id="goPageNo" value="6"  onkeydown="if(event.keyCode==13){goPage('/take');}" /><input type="button" style="margin-left:3px;cursor:hand;" value="ok" onclick="goPage('/take');" />
+    </div>
+<script>
+function beforeComment(word){ 
+  var commentWord=getCookie("commentWord"+word);
+  if(commentWord!=null){
+	alert("fail! The minimum comment interval of one word is 60 seconds");
+	return;
+  }
+  var username=trim(formComment.username.value);
+  var comment=trim(formComment.comment.value);
+  ////如果句子不含word就通不过
+  if(comment==""){
+  	 alert("The comment cann't be empty!");
+  	 return;
+  }
+  if(comment.length>1000){
+  	 alert("The comment cann't be longer then 1000 length!");
+  	 return;
+  }
+	////ajax
+  var xmlhttp;
+	if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+ 		 xmlhttp=new XMLHttpRequest();
+  }else{// code for IE6, IE5
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+      ////返回后做事情
+  		var responseText=xmlhttp.responseText;  
+
+  		////需改的地方1
+  		//有异常.
+  		if(responseText!="" && responseText!=null){
+  		   alert(responseText);
+  		   ///window.close();
+  		}else{
+  			var showMsg="comment success! thank you! ";
+			//cookie别设置太长,防止用户电脑中cookie太多哦
+			setCookie("commentWord"+word,"1",1/60);
+  			alert(showMsg);
+			///var createtime=new Date().toDateString();
+			var date1 = new Date();
+			var createtime = date1.getFullYear()+'-'+(date1.getMonth()+1)+'-'+date1.getDate()+' '+date1.getHours()+':'+date1.getMinutes()+':'+date1.getSeconds();
+			var commentDiv='<div><ul style="padding-bottom:10px;margin-top:8px;border-bottom: 1px dashed #ccc;margin-left:8px;"><li><div><span>';
+			commentDiv+=username;
+			commentDiv+='</span>&nbsp;<span style="color:#aeaeae">';
+			///commentDiv+=createtime.substr(0,10);
+			commentDiv+=createtime;
+			commentDiv+='</span></div><div style="clear:both;margin:5px auto;">';
+			commentDiv+=comment;
+			commentDiv+='</div></li></ul></div>\r\n';
+			///alert(commentDiv);
+			document.getElementById("commetcontent").innerHTML=commentDiv+document.getElementById("commetcontent").innerHTML;
+			formComment.comment.value=""; 
+  		}
+		formComment.button1.disabled=false;
+	  }
+  };
+  xmlhttp.open("POST","/commentAjax.php",true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  var ajaxStr="action=submitAjax&word="+encodeURI(word)+"&comment="+encodeURI(comment)+"&username="+encodeURI(username)+"&rnd="+ Math.random();
+  xmlhttp.send(ajaxStr);
+  formComment.button1.disabled=true;
+}
+
+var commentText="";
+function queryComment2(){
+	if(commentText!=""){
+		var comment_arr=commentText.split("||");
+		var comment_html="";
+		///alert(comment_arr.length);
+		for(var i=0;i<parseInt(comment_arr.length/4);i++){
+			var word=comment_arr[i*4];
+			var comment=comment_arr[i*4+1];
+			var createtime=comment_arr[i*4+2];
+			var username=comment_arr[i*4+3];
+			var commentDiv='<div><ul style="padding-bottom:10px;margin-top:8px;border-bottom: 1px dashed #ccc;margin-left:8px;"><li><div><span>';
+			commentDiv+=username;
+			commentDiv+='</span>&nbsp;<span style="color:#aeaeae">';
+			///commentDiv+=createtime.substr(0,10);
+			commentDiv+=createtime;
+			commentDiv+='</span></div><div style="clear:both;margin:5px auto;">';
+			commentDiv+=comment;
+			commentDiv+='</div></li></ul></div>\r\n';
+			///alert(commentDiv);
+			comment_html+=commentDiv;
+		}
+		document.getElementById("commetcontent").innerHTML=comment_html;
+	}
+}
+</script>
+<div class="mt1" style="margin-left:0px;">
+<dl class="tbox">
+    <dt> <strong>Leave a comment</strong></dt>
+    <dd>
+      <div class="dede_comment_post">
+        <form action="#" method="post" name="formComment">
+          <div class="dcmp-title"> <small>Welcome to leave a comment about this page!</small> </div>
+		  <div style="margin:5px auto;">
+		  <textarea style="width:98%" name="comment" rows="5" ></textarea>
+		  </div>
+          <div>
+              Your name:
+              <input type="text" name="username" value="me" size="8" style="font-size:13px;">
+              <button name="button1" type="button" onclick="beforeComment('take')">Submit</button>
+          </div>
+        </form>
+      </div>
+    </dd>
+</dl>
+</div>
+
+<div style="margin-top:8px;">
+  <dl class="tbox">
+    <dt> <strong>Latest comments</strong><span style="float:right;line-height:25px;padding-right:8px;"><a href="comment.php?word=take" target="_blank">Into the comment page&gt;&gt;</a></span></dt>
+	<dd id="commetcontent">
+	<!--
+	<div>
+	  <ul style="padding-bottom:10px;margin-top:8px;border-bottom: 1px dashed #ccc;margin-left:8px;">
+		<li> 
+		  <div><span>某某</span>&nbsp;<span style="color:#aeaeae">2016-01-13</span></div>
+		  <div style="clear:both;margin:5px auto;">联网相关的政策</div>
+		</li>
+	  </ul>
+	</div>
+	-->
+	</dd>
+  </dl>
+</div>
+
+
+
+</div><!-- div_main_left --> 
+
+<div id="div_main_right" style="width:18%;margin-top:8px;float:right;border:0px solid blue;" >
+<div>
+<dl class="tbox light" style="margin-bottom:4px;">
+	<dt class="light"><strong>More words</strong></dt>
+	<dd class="light">
+	<ul class="c1 ico2">
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="wretched.html">wretched</a>&nbsp;(164+8)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="shrewd.html">shrewd</a>&nbsp;(160+9)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="servile.html">servile</a>&nbsp;(46+3)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="amiable.html">amiable</a>&nbsp;(95+6)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="candid.html">candid</a>&nbsp;(95+5)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="recount.html">recount</a>&nbsp;(54+1)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="stipulate.html">stipulate</a>&nbsp;(76+1)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="egg yolk.html">egg yolk</a>&nbsp;(53+1)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="entranceway.html">entranceway</a>&nbsp;(21)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="empty.html">empty</a>&nbsp;(277+55)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="escape.html">escape</a>&nbsp;(299+55)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="expanse.html">expanse</a>&nbsp;(124+7)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="entire.html">entire</a>&nbsp;(175+48)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="enjoyment.html">enjoyment</a>&nbsp;(174+6)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="elected.html">elected</a>&nbsp;(269+34)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="exist.html">exist</a>&nbsp;(252+16)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="escalator.html">escalator</a>&nbsp;(49+1)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="electromagnetic.html">electromagnetic</a>&nbsp;(255+1)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="ergonomics.html">ergonomics</a>&nbsp;(62+2)</span>
+		</li>
+				<li class="dotline"><span style="float:left;"><a style="color: #256EB1;" href="eagerness.html">eagerness</a>&nbsp;(65+2)</span>
+		</li>
+			</ul>
+	</dd>
+</dl>
+</div>
+<div id="ads4">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 160_600_20170509 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-7200850114163593"
+     data-ad-slot="1770400263"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div><!-- div_main_right结束 -->
+
+<!--外部文件,先显示图片,再广告,再其它-->
+<!--图+-->
+<div style="padding-top:2px;clear:both;"></">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 970_90_20170421 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-7200850114163593"
+     data-ad-slot="5287223468"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="footer w960 center mt1 clear">
+<div class="footer_body">
+
+<div class="copyright">Copyright © 2016 sentencedict.com All Rights Reserved Contact:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d1f1b1e19191a18181e1d6d5c5c034e4240">[email&#160;protected]</a>
+</div>
+
+</div><!-- footer_body -->
+</div><!--footer w960 -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-97689481-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-578e31c97244699a"></script></div><!-- pageDiv -->
+<script type="text/javascript" src="https://other.sentencedict.com/queryComment_js.php?action=queryAjax&word=take"></script>
+<script>queryComment2();</script>
+</body>
+</html>
