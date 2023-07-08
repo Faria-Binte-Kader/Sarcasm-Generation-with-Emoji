@@ -1,0 +1,32 @@
+# modular.yaml
+
+## Where the samples will be written
+save_data: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/data
+## Where the vocab(s) will be written
+src_vocab: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/data/example.vocab.src
+tgt_vocab: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/data/example.vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/data/source-train.txt
+        path_tgt: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/data/target-train.txt
+    valid:
+        path_src: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/data/source-val.txt
+        path_tgt: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/data/target-val.txt
+
+# Vocabulary files that were just created
+src_vocab: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/data/example.vocab.src
+tgt_vocab: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/data/example.vocab.tgt
+
+# Train on a single GPU
+world_size: 1
+gpu_ranks: [0]
+
+# Where to save the checkpoints
+save_model: /content/drive/MyDrive/sarcasm_generation/sarcasm_generation/positive_induction/OpenNMT-py/model
+save_checkpoint_steps: 5000
+train_steps: 100000
+valid_steps: 5000
