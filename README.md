@@ -1,5 +1,5 @@
 # Sarcasm-Generation-with-Emoji
-If you use the code/data/resources shared here, fully or partially, please do cite our paper.
+If you use the code/data/resources shared here, fully or partially, please cite our paper.
 ```
 @article{kader2023words,
   title={" When Words Fail, Emojis Prevail": Generating Sarcastic Utterances with Emoji Using Valence Reversal and Semantic Incongruity},
