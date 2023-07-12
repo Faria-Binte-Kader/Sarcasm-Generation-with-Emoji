@@ -1,12 +1,15 @@
 # “When Words Fail, Emojis Prevail”: Generating Sarcastic Utterances with Emoji Using Valence Reversal and Semantic Incongruity
 This repository contains the code, data, and models of the paper titled "“When Words Fail, Emojis Prevail”: Generating Sarcastic Utterances with Emoji Using Valence Reversal and Semantic Incongruity" published in  ***61st Annual Meeting of the Association for Computational Linguistics-Student Research Workshop : ACL SRW 2023***.
 
-[![arXiv](https://img.shields.io/badge/arXiv-2305.06595-b31b1b.svg)](https://arxiv.org/abs/2305.04105)
-[![anthology](https://img.shields.io/badge/ACL%20Anthology-2023.findings--acl.80-EE161F.svg)](https://aclanthology.org/2023.acl-srw.47/)
+[![arXiv](https://img.shields.io/badge/arXiv-2305.04105-b31b1b.svg)](https://arxiv.org/abs/2305.04105)
+[![anthology](https://img.shields.io/badge/ACL%20Anthology-2023.aclsrw.47-EE161F.svg)](https://aclanthology.org/2023.acl-srw.47/)
 [![GoogleScholar](https://img.shields.io/badge/Google%20Scholar-4285F4?style=flat&logo=Google+Scholar&logoColor=white&color=gray&labelColor=4285F4)](https://tinyurl.com/2zh5nrsh)
 [![ResearchGate](https://img.shields.io/badge/ResearchGate-00CCBB?style=flat&logo=ResearchGate&logoColor=white&color=gray&labelColor=00CCBB)](https://tinyurl.com/278f4us9)
 
 [![PDF](https://img.shields.io/badge/Paper%20PDF-EF3939?style=flat&logo=adobeacrobatreader&logoColor=white&color=gray&labelColor=ec1c24)](https://aclanthology.org/2023.acl-srw.47.pdf)
+[![Poster](https://img.shields.io/badge/Poster%20PDF-EF3939?style=flat&logo=Microsoft+PowerPoint&logoColor=white&color=gray&labelColor=B7472A)](https://drive.google.com/file/d/1EGaVY3H-iyaKjEr2bchgOmJ8Q771CE00/view?usp=sharing)
+[![Video](https://img.shields.io/badge/Video%20Presentation-4285F4?style=flat&logo=Google+Drive&logoColor=white&color=gray&labelColor=4285F4)](https://drive.google.com/file/d/1IR6yGm2vlVmYwJb3HGedVL4BUJ83GYP3/view?usp=sharing)
+
 
 
 **License:** Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
