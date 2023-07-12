@@ -29,6 +29,9 @@ Generation of sarcasm from literal negative input is done using three modules: R
 ### Reversal of Valence
 
 ### Retrieval of Commonsense
+You can get the data and model for COMET-DISTIL [here](https://storage.googleapis.com/ai2-mosaic-public/projects/symbolic-knowledge-decoding/symbolic-knowledge-distillation.tar.gz)
+
+For using COMET-ATOMIC2020 instead, you can find the data [here](https://allenai.org/data/atomic-2020) and you would need to download the [BART](https://storage.googleapis.com/ai2-mosaic-public/projects/mosaic-kgs/comet-atomic_2020_BART.zip) and [GPT2](https://storage.googleapis.com/ai2-mosaic-public/projects/mosaic-kgs/comet-atomic_2020_GPT2XL.zip) model separately. 
 
 ### Emoji Prediction
 
