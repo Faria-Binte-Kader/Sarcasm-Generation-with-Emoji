@@ -22,12 +22,22 @@ This repository contains the code, data, and models of the paper titled "“When
 
 
 ## Data Construction
+Generation of sarcasm from literal negative input is done using three modules: Reversal of Valence, Retrieval of Commonsense and Emoji Prediction.
+### Model Architecture
+![model](https://github.com/WrightlyRong/Sarcasm-Generation-with-Emoji/assets/55374565/31762ad7-b29e-46ba-897f-21f5816c8061)
+
+### Reversal of Valence
+
+### Retrieval of Commonsense
+
+### Emoji Prediction
+
 
 
 ## Results
 
-
-
+## Citation
+If you find this work useful, please cite our paper:
 ```
 @inproceedings{kader-etal-2023-words,
     title = "{``}When Words Fail, Emojis Prevail{''}: A Novel Architecture for Generating Sarcastic Sentences With Emoji Using Valence Reversal and Semantic Incongruity",
@@ -48,4 +58,3 @@ This repository contains the code, data, and models of the paper titled "“When
 }
 
 ```
-Generation of sarcasm from literal negative input is done using three modules: Reversal of Valence, Retrieval of Commonsense and Emoji Prediction. Please look inside the respective folders' READMEs for more details.
