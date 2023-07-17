@@ -34,8 +34,8 @@ You can get the data and model for COMET-DISTIL [here](https://storage.googleapi
 For using COMET-ATOMIC2020 instead, you can find the data [here](https://allenai.org/data/atomic-2020) and you would need to download the [BART](https://storage.googleapis.com/ai2-mosaic-public/projects/mosaic-kgs/comet-atomic_2020_BART.zip) and [GPT2](https://storage.googleapis.com/ai2-mosaic-public/projects/mosaic-kgs/comet-atomic_2020_GPT2XL.zip) model separately. 
 
 ### Emoji Prediction
-
-
+You can find the requirements for the model inside the folder.
+The data needs to be provided in a csv file where the first row is the non-sarcastic input, the second row is the utterances after positive induction, third is the sarcastic output and fourth is the commonsense context.
 
 ## Results
 
